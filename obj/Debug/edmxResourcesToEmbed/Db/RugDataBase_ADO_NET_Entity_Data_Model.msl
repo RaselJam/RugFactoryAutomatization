@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="RugDataBase_ADO_NET_Entity_Data_ModelStoreContainer" CdmEntityContainer="RugDataBase_Context">
+    <EntitySetMapping Name="Clientes">
+      <EntityTypeMapping TypeName="IsTypeOf(RugDataBase_ADO_NET_Entity_Data_Model.Cliente)">
+        <MappingFragment StoreEntitySet="Clientes">
+          <ScalarProperty Name="Cliente_Id" ColumnName="Cliente_Id" />
+          <ScalarProperty Name="Nombre_Apellidos" ColumnName="Nombre_Apellidos" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Movile" ColumnName="Movile" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Alfombras">
+      <EntityTypeMapping TypeName="IsTypeOf(RugDataBase_ADO_NET_Entity_Data_Model.Alfombra)">
+        <MappingFragment StoreEntitySet="Alfombras">
+          <ScalarProperty Name="Alfombra_Id" ColumnName="Alfombra_Id" />
+          <ScalarProperty Name="Ancho" ColumnName="Ancho" />
+          <ScalarProperty Name="Largo" ColumnName="Largo" />
+          <ScalarProperty Name="Calidad" ColumnName="Calidad" />
+          <ScalarProperty Name="ClienteCliente_Id" ColumnName="ClienteCliente_Id" />
+          <ScalarProperty Name="Is_EnFabrica" ColumnName="Is_EnFabrica" />
+          <ScalarProperty Name="Is_Lavado" ColumnName="Is_Lavado" />
+          <ScalarProperty Name="Prefix_Albaran" ColumnName="Prefix_Albaran" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FallosAlfombra">
+      <EntityTypeMapping TypeName="IsTypeOf(RugDataBase_ADO_NET_Entity_Data_Model.FalloAlfombra)">
+        <MappingFragment StoreEntitySet="FallosAlfombra">
+          <ScalarProperty Name="FalloId" ColumnName="FalloId" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Albaranes">
+      <EntityTypeMapping TypeName="IsTypeOf(RugDataBase_ADO_NET_Entity_Data_Model.Albaran)">
+        <MappingFragment StoreEntitySet="Albaranes">
+          <ScalarProperty Name="Albaran_Id" ColumnName="Albaran_Id" />
+          <ScalarProperty Name="Recogido_Por" ColumnName="Recogido_Por" />
+          <ScalarProperty Name="Fecha_Entrada" ColumnName="Fecha_Entrada" />
+          <ScalarProperty Name="Foto_Job" ColumnName="Foto_Job" />
+          <ScalarProperty Name="Fecha_BaseDatos" ColumnName="Fecha_BaseDatos" />
+          <ScalarProperty Name="Presupuesto" ColumnName="Presupuesto" />
+          <ScalarProperty Name="Is_Confirmado" ColumnName="Is_Confirmado" />
+          <ScalarProperty Name="Is_Trabajo_Terminado" ColumnName="Is_Trabajo_Terminado" />
+          <ScalarProperty Name="ClienteCliente_Id" ColumnName="ClienteCliente_Id" />
+          <ScalarProperty Name="Parte_Confirmado" ColumnName="Parte_Confirmado" />
+          <ScalarProperty Name="Total_Items_Quantity" ColumnName="Total_Items_Quantity" />
+          <ScalarProperty Name="Numero_Albaran" ColumnName="Numero_Albaran" />
+          <ScalarProperty Name="Is_Active" ColumnName="Is_Active" />
+          <ScalarProperty Name="NumeroDeAviso" ColumnName="NumeroDeAviso" />
+          <ScalarProperty Name="fecha_Estimada" ColumnName="fecha_Estimada" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Facturas">
+      <EntityTypeMapping TypeName="IsTypeOf(RugDataBase_ADO_NET_Entity_Data_Model.Factura)">
+        <MappingFragment StoreEntitySet="Facturas">
+          <ScalarProperty Name="Fatura_Id" ColumnName="Fatura_Id" />
+          <ScalarProperty Name="Total" ColumnName="Total" />
+          <ScalarProperty Name="Is_Cobrado" ColumnName="Is_Cobrado" />
+          <ScalarProperty Name="Metodo_Pago" ColumnName="Metodo_Pago" />
+          <ScalarProperty Name="Fecha_Emicion" ColumnName="Fecha_Emicion" />
+          <ScalarProperty Name="Fecha_Entrega" ColumnName="Fecha_Entrega" />
+          <ScalarProperty Name="ClienteCliente_Id" ColumnName="ClienteCliente_Id" />
+          <ScalarProperty Name="Entregado_Por" ColumnName="Entregado_Por" />
+          <ScalarProperty Name="ContactContact_Id" ColumnName="ContactContact_Id" />
+          <ScalarProperty Name="Is_Entregado" ColumnName="Is_Entregado" />
+          <ScalarProperty Name="Descuento" ColumnName="Descuento" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Lavados">
+      <EntityTypeMapping TypeName="IsTypeOf(RugDataBase_ADO_NET_Entity_Data_Model.Lavado)">
+        <MappingFragment StoreEntitySet="Lavados">
+          <ScalarProperty Name="Lavado_Id" ColumnName="Lavado_Id" />
+          <ScalarProperty Name="Personal" ColumnName="Personal" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="AlfombraFalloAlfombra" TypeName="RugDataBase_ADO_NET_Entity_Data_Model.AlfombraFalloAlfombra" StoreEntitySet="AlfombraFalloAlfombra">
+      <EndProperty Name="Alfombra">
+        <ScalarProperty Name="Alfombra_Id" ColumnName="AlfombraFalloAlfombra_FalloAlfombra_Alfombra_Id" />
+      </EndProperty>
+      <EndProperty Name="FalloAlfombra">
+        <ScalarProperty Name="FalloId" ColumnName="FalloAlfombras_FalloId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="AlbaranFactura" TypeName="RugDataBase_ADO_NET_Entity_Data_Model.AlbaranFactura" StoreEntitySet="Facturas">
+      <EndProperty Name="Albaran">
+        <ScalarProperty Name="Albaran_Id" ColumnName="Albaran_Albaran_Id" />
+      </EndProperty>
+      <EndProperty Name="Factura">
+        <ScalarProperty Name="Fatura_Id" ColumnName="Fatura_Id" />
+      </EndProperty>
+      <Condition ColumnName="Albaran_Albaran_Id" IsNull="false" />
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="AlbaranAlfombra" TypeName="RugDataBase_ADO_NET_Entity_Data_Model.AlbaranAlfombra" StoreEntitySet="AlbaranAlfombra">
+      <EndProperty Name="Albaran">
+        <ScalarProperty Name="Albaran_Id" ColumnName="Albarans_Albaran_Id" />
+      </EndProperty>
+      <EndProperty Name="Alfombra">
+        <ScalarProperty Name="Alfombra_Id" ColumnName="Alfombras_Alfombra_Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FacturaAlfombra" TypeName="RugDataBase_ADO_NET_Entity_Data_Model.FacturaAlfombra" StoreEntitySet="FacturaAlfombra">
+      <EndProperty Name="Factura">
+        <ScalarProperty Name="Fatura_Id" ColumnName="FacturaAlfombra_Alfombra_Fatura_Id" />
+      </EndProperty>
+      <EndProperty Name="Alfombra">
+        <ScalarProperty Name="Alfombra_Id" ColumnName="Alfombras_Alfombra_Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="LavadoAlfombra" TypeName="RugDataBase_ADO_NET_Entity_Data_Model.LavadoAlfombra" StoreEntitySet="LavadoAlfombra">
+      <EndProperty Name="Lavado">
+        <ScalarProperty Name="Lavado_Id" ColumnName="Lavados_Lavado_Id" />
+      </EndProperty>
+      <EndProperty Name="Alfombra">
+        <ScalarProperty Name="Alfombra_Id" ColumnName="Alfombras_Alfombra_Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="LavadoAlbaran" TypeName="RugDataBase_ADO_NET_Entity_Data_Model.LavadoAlbaran" StoreEntitySet="LavadoAlbaran">
+      <EndProperty Name="Lavado">
+        <ScalarProperty Name="Lavado_Id" ColumnName="Lavados_Lavado_Id" />
+      </EndProperty>
+      <EndProperty Name="Albaran">
+        <ScalarProperty Name="Albaran_Id" ColumnName="Albarans_Albaran_Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

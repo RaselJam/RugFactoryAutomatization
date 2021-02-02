@@ -1,0 +1,308 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A701C6F0-46DF-45C1-B801-FA843536DE83}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>RugFactory</RootNamespace>
+    <AssemblyName>RugFactory</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>C:\Users\Alicia\Desktop\Beta release\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>ED53A239CC6AEE96F7859C6194FB2D748675B594</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>RugFactory_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.2.0, Culture=neutral, PublicKeyToken=0e99375e54769942, processorArchitecture=MSIL">
+      <HintPath>packages\Portable.BouncyCastle.1.8.2\lib\net40\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="Csv, Version=1.0.31.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Csv.1.0.31\lib\net40\Csv.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentFTP, Version=19.2.2.0, Culture=neutral, PublicKeyToken=f4af092b1d8df44f, processorArchitecture=MSIL">
+      <HintPath>packages\FluentFTP.19.2.2\lib\net45\FluentFTP.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.DotNet.PlatformAbstractions, Version=2.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.DotNet.PlatformAbstractions.2.1.0\lib\net45\Microsoft.DotNet.PlatformAbstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyModel, Version=2.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Extensions.DependencyModel.2.1.0\lib\net451\Microsoft.Extensions.DependencyModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="SdkApi.Core, Version=2.15.2634.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Zebra.Printer.SDK.2.15.2634\lib\net471\SdkApi.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="SdkApi.Desktop, Version=2.15.2634.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Zebra.Printer.SDK.2.15.2634\lib\net471\SdkApi.Desktop.dll</HintPath>
+    </Reference>
+    <Reference Include="SdkApi.Desktop.Usb, Version=2.15.2634.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Zebra.Printer.SDK.2.15.2634\lib\net471\SdkApi.Desktop.Usb.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpSnmpLib, Version=10.0.9.0, Culture=neutral, PublicKeyToken=4c00852d3788e005, processorArchitecture=MSIL">
+      <HintPath>packages\Lextm.SharpSnmpLib.10.0.9\lib\net452\SharpSnmpLib.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Collections.Specialized, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Collections.Specialized.4.3.0\lib\net46\System.Collections.Specialized.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net.NameResolution, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Net.NameResolution.4.3.0\lib\net46\System.Net.NameResolution.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Sockets, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Net.Sockets.4.3.0\lib\net46\System.Net.Sockets.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Runtime.InteropServices.RuntimeInformation.4.0.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.XmlDocument, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Xml.XmlDocument.4.3.0\lib\net46\System.Xml.XmlDocument.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ZebraPrinterSdk, Version=2.15.2634.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Zebra.Printer.SDK.2.15.2634\lib\net471\ZebraPrinterSdk.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Add_Alfombra_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Add_Alfombra_Form.Designer.cs">
+      <DependentUpon>Add_Alfombra_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Alfombras_Consultas_Window.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Alfombras_Consultas_Window.Designer.cs">
+      <DependentUpon>Alfombras_Consultas_Window.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddAlbaran.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddAlbaran.Designer.cs">
+      <DependentUpon>AddAlbaran.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Clientes_Window.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Clientes_Window.Designer.cs">
+      <DependentUpon>Clientes_Window.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Db\Albaran.cs">
+      <DependentUpon>RugDataBase_ADO_NET_Entity_Data_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Db\Alfombra.cs">
+      <DependentUpon>RugDataBase_ADO_NET_Entity_Data_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Db\Cliente.cs">
+      <DependentUpon>RugDataBase_ADO_NET_Entity_Data_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Db\DbAccess.cs" />
+    <Compile Include="Db\Factura.cs">
+      <DependentUpon>RugDataBase_ADO_NET_Entity_Data_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Db\FalloAlfombra.cs">
+      <DependentUpon>RugDataBase_ADO_NET_Entity_Data_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Db\Lavado.cs">
+      <DependentUpon>RugDataBase_ADO_NET_Entity_Data_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Db\RugDataBase_ADO_NET_Entity_Data_Model.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RugDataBase_ADO_NET_Entity_Data_Model.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Db\RugDataBase_ADO_NET_Entity_Data_Model.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RugDataBase_ADO_NET_Entity_Data_Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Db\RugDataBase_ADO_NET_Entity_Data_Model.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RugDataBase_ADO_NET_Entity_Data_Model.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Entrada_Alfombra_Window.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Entrada_Alfombra_Window.Designer.cs">
+      <DependentUpon>Entrada_Alfombra_Window.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Fallos_Settings_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fallos_Settings_Form.Designer.cs">
+      <DependentUpon>Fallos_Settings_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormUtilities.cs" />
+    <Compile Include="MainWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainWindow.Designer.cs">
+      <DependentUpon>MainWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Ticket.cs" />
+    <Compile Include="View Models\AlfombraView.cs" />
+    <EmbeddedResource Include="Add_Alfombra_Form.resx">
+      <DependentUpon>Add_Alfombra_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddAlbaran.resx">
+      <DependentUpon>AddAlbaran.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Clientes_Window.resx">
+      <DependentUpon>Clientes_Window.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fallos_Settings_Form.resx">
+      <DependentUpon>Fallos_Settings_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainWindow.resx">
+      <DependentUpon>MainWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EntityDeploy Include="Db\RugDataBase_ADO_NET_Entity_Data_Model.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>RugDataBase_ADO_NET_Entity_Data_Model.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Db\RugDataBase_ADO_NET_Entity_Data_Model.edmx.diagram">
+      <DependentUpon>RugDataBase_ADO_NET_Entity_Data_Model.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\RugFactory.Db.Cliente.datasource" />
+    <None Include="Properties\DataSources\RugFactory.Db.Contact.datasource" />
+    <None Include="Properties\DataSources\RugFactory.Db.Email.datasource" />
+    <None Include="Properties\DataSources\RugFactory.Db.FalloAlfombra.datasource" />
+    <None Include="Properties\DataSources\RugFactory.Db.Phone_Number.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="RugFactory_TemporaryKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Db\RugDataBase_ADO_NET_Entity_Data_Model.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>RugDataBase_ADO_NET_Entity_Data_Model.Context.cs</LastGenOutput>
+      <DependentUpon>RugDataBase_ADO_NET_Entity_Data_Model.edmx</DependentUpon>
+    </Content>
+    <Content Include="Db\RugDataBase_ADO_NET_Entity_Data_Model.edmx.sql" />
+    <Content Include="Db\RugDataBase_ADO_NET_Entity_Data_Model.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>RugDataBase_ADO_NET_Entity_Data_Model.cs</LastGenOutput>
+      <DependentUpon>RugDataBase_ADO_NET_Entity_Data_Model.edmx</DependentUpon>
+    </Content>
+    <Content Include="Source\logo - copia.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="1bf46c8e27c7416ab12155471d982bba" Name="Diagram1" ZoomLevel="65" DisplayType="false" >
+        <EntityTypeShape EntityType="RugDataBase_ADO_NET_Entity_Data_Model.Cliente" Width="1.5" PointX="9.75" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="RugDataBase_ADO_NET_Entity_Data_Model.Alfombra" Width="1.5" PointX="15.5" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="RugDataBase_ADO_NET_Entity_Data_Model.FalloAlfombra" Width="1.5" PointX="18.75" PointY="1" IsExpanded="true" />
+        <AssociationConnector Association="RugDataBase_ADO_NET_Entity_Data_Model.AlfombraFalloAlfombra" />
+        <AssociationConnector Association="RugDataBase_ADO_NET_Entity_Data_Model.AlfombraCliente" ManuallyRouted="false" >
+        </AssociationConnector>
+        <EntityTypeShape EntityType="RugDataBase_ADO_NET_Entity_Data_Model.Albaran" PointX="12.625" PointY="2.875" Width="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="RugDataBase_ADO_NET_Entity_Data_Model.Factura" Width="1.5" PointX="6" PointY="3.875" IsExpanded="true" />
+        <AssociationConnector Association="RugDataBase_ADO_NET_Entity_Data_Model.ClienteAlbaran" ManuallyRouted="false" >
+        </AssociationConnector>
+        <AssociationConnector Association="RugDataBase_ADO_NET_Entity_Data_Model.ClienteFactura" />
+        <AssociationConnector Association="RugDataBase_ADO_NET_Entity_Data_Model.AlbaranFactura" />
+        <AssociationConnector Association="RugDataBase_ADO_NET_Entity_Data_Model.AlbaranAlfombra" ManuallyRouted="false" >
+        </AssociationConnector>
+        <AssociationConnector Association="RugDataBase_ADO_NET_Entity_Data_Model.FacturaAlfombra" />
+        <EntityTypeShape EntityType="RugDataBase_ADO_NET_Entity_Data_Model.Lavado" Width="1.5" PointX="18.75" PointY="5.125" IsExpanded="true" />
+        <AssociationConnector Association="RugDataBase_ADO_NET_Entity_Data_Model.LavadoAlfombra" />
+        <AssociationConnector Association="RugDataBase_ADO_NET_Entity_Data_Model.LavadoAlbaran" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

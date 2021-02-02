@@ -1,0 +1,203 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="RugDataBase_ADO_NET_Entity_Data_Model" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+  <EntityContainer Name="RugDataBase_Context" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Clientes" EntityType="RugDataBase_ADO_NET_Entity_Data_Model.Cliente" />
+    <EntitySet Name="Alfombras" EntityType="RugDataBase_ADO_NET_Entity_Data_Model.Alfombra" />
+    <EntitySet Name="FallosAlfombra" EntityType="RugDataBase_ADO_NET_Entity_Data_Model.FalloAlfombra" />
+    <AssociationSet Name="AlfombraFalloAlfombra" Association="RugDataBase_ADO_NET_Entity_Data_Model.AlfombraFalloAlfombra">
+      <End Role="Alfombra" EntitySet="Alfombras" />
+      <End Role="FalloAlfombra" EntitySet="FallosAlfombra" />
+    </AssociationSet>
+    <AssociationSet Name="AlfombraCliente" Association="RugDataBase_ADO_NET_Entity_Data_Model.AlfombraCliente">
+      <End Role="Alfombra" EntitySet="Alfombras" />
+      <End Role="Cliente" EntitySet="Clientes" />
+    </AssociationSet>
+    <EntitySet Name="Albaranes" EntityType="RugDataBase_ADO_NET_Entity_Data_Model.Albaran" />
+    <EntitySet Name="Facturas" EntityType="RugDataBase_ADO_NET_Entity_Data_Model.Factura" />
+    <AssociationSet Name="ClienteAlbaran" Association="RugDataBase_ADO_NET_Entity_Data_Model.ClienteAlbaran">
+      <End Role="Cliente" EntitySet="Clientes" />
+      <End Role="Albaran" EntitySet="Albaranes" />
+    </AssociationSet>
+    <AssociationSet Name="ClienteFactura" Association="RugDataBase_ADO_NET_Entity_Data_Model.ClienteFactura">
+      <End Role="Cliente" EntitySet="Clientes" />
+      <End Role="Factura" EntitySet="Facturas" />
+    </AssociationSet>
+    <AssociationSet Name="AlbaranFactura" Association="RugDataBase_ADO_NET_Entity_Data_Model.AlbaranFactura">
+      <End Role="Albaran" EntitySet="Albaranes" />
+      <End Role="Factura" EntitySet="Facturas" />
+    </AssociationSet>
+    <AssociationSet Name="AlbaranAlfombra" Association="RugDataBase_ADO_NET_Entity_Data_Model.AlbaranAlfombra">
+      <End Role="Albaran" EntitySet="Albaranes" />
+      <End Role="Alfombra" EntitySet="Alfombras" />
+    </AssociationSet>
+    <AssociationSet Name="FacturaAlfombra" Association="RugDataBase_ADO_NET_Entity_Data_Model.FacturaAlfombra">
+      <End Role="Factura" EntitySet="Facturas" />
+      <End Role="Alfombra" EntitySet="Alfombras" />
+    </AssociationSet>
+    <EntitySet Name="Lavados" EntityType="RugDataBase_ADO_NET_Entity_Data_Model.Lavado" />
+    <AssociationSet Name="LavadoAlfombra" Association="RugDataBase_ADO_NET_Entity_Data_Model.LavadoAlfombra">
+      <End Role="Lavado" EntitySet="Lavados" />
+      <End Role="Alfombra" EntitySet="Alfombras" />
+    </AssociationSet>
+    <AssociationSet Name="LavadoAlbaran" Association="RugDataBase_ADO_NET_Entity_Data_Model.LavadoAlbaran">
+      <End Role="Lavado" EntitySet="Lavados" />
+      <End Role="Albaran" EntitySet="Albaranes" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Cliente">
+    <Key>
+      <PropertyRef Name="Cliente_Id" />
+    </Key>
+    <Property Name="Cliente_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre_Apellidos" Type="String" Nullable="false" MaxLength="50" />
+    <NavigationProperty Name="Alfombras" Relationship="RugDataBase_ADO_NET_Entity_Data_Model.AlfombraCliente" FromRole="Cliente" ToRole="Alfombra" />
+    <NavigationProperty Name="Albarans" Relationship="RugDataBase_ADO_NET_Entity_Data_Model.ClienteAlbaran" FromRole="Cliente" ToRole="Albaran" />
+    <NavigationProperty Name="Facturas" Relationship="RugDataBase_ADO_NET_Entity_Data_Model.ClienteFactura" FromRole="Cliente" ToRole="Factura" />
+    <Property Name="Address" Type="String" Nullable="false" />
+    <Property Name="Movile" Type="String" Nullable="false" MaxLength="20" />
+    <Property Name="Telefono" Type="String" Nullable="true" MaxLength="20" />
+    <Property Name="Email" Type="String" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Alfombra">
+    <Key>
+      <PropertyRef Name="Alfombra_Id" />
+    </Key>
+    <Property Name="Alfombra_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Ancho" Type="Int16" Nullable="false" />
+    <Property Name="Largo" Type="Int16" Nullable="false" />
+    <Property Name="Calidad" Type="String" Nullable="false" />
+    <NavigationProperty Name="FalloAlfombras" Relationship="RugDataBase_ADO_NET_Entity_Data_Model.AlfombraFalloAlfombra" FromRole="Alfombra" ToRole="FalloAlfombra" />
+    <NavigationProperty Name="Cliente" Relationship="RugDataBase_ADO_NET_Entity_Data_Model.AlfombraCliente" FromRole="Alfombra" ToRole="Cliente" />
+    <Property Name="ClienteCliente_Id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Albarans" Relationship="RugDataBase_ADO_NET_Entity_Data_Model.AlbaranAlfombra" FromRole="Alfombra" ToRole="Albaran" />
+    <NavigationProperty Name="Lavados" Relationship="RugDataBase_ADO_NET_Entity_Data_Model.LavadoAlfombra" FromRole="Alfombra" ToRole="Lavado" />
+    <Property Name="Is_EnFabrica" Type="Boolean" Nullable="false" DefaultValue="True" />
+    <Property Name="Is_Lavado" Type="Boolean" Nullable="true" DefaultValue="False" />
+    <Property Name="Prefix_Albaran" Type="String" Nullable="true" DefaultValue="TR" />
+  </EntityType>
+  <EntityType Name="FalloAlfombra">
+    <Key>
+      <PropertyRef Name="FalloId" />
+    </Key>
+    <Property Name="FalloId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" Nullable="false" MaxLength="20" />
+    <Property Name="Descripcion" Type="String" Nullable="true" MaxLength="500" />
+  </EntityType>
+  <Association Name="AlfombraFalloAlfombra">
+    <End Type="RugDataBase_ADO_NET_Entity_Data_Model.Alfombra" Role="Alfombra" Multiplicity="*" />
+    <End Type="RugDataBase_ADO_NET_Entity_Data_Model.FalloAlfombra" Role="FalloAlfombra" Multiplicity="*" />
+  </Association>
+  <Association Name="AlfombraCliente">
+    <End Type="RugDataBase_ADO_NET_Entity_Data_Model.Alfombra" Role="Alfombra" Multiplicity="*" />
+    <End Type="RugDataBase_ADO_NET_Entity_Data_Model.Cliente" Role="Cliente" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <ReferentialConstraint>
+      <Principal Role="Cliente">
+        <PropertyRef Name="Cliente_Id" />
+      </Principal>
+      <Dependent Role="Alfombra">
+        <PropertyRef Name="ClienteCliente_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Albaran">
+    <Key>
+      <PropertyRef Name="Albaran_Id" />
+    </Key>
+    <Property Name="Albaran_Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" Type="Int32" />
+    <Property Name="Recogido_Por" Nullable="false" MaxLength="10" Type="String" />
+    <Property Name="Fecha_Entrada" Nullable="true" Type="DateTime" />
+    <Property Name="Foto_Job" Nullable="true" MaxLength="50" Type="String" />
+    <Property Name="Fecha_BaseDatos" Type="DateTime" Nullable="true" />
+    <Property Name="Presupuesto" Type="String" Nullable="true" />
+    <Property Name="Is_Confirmado" Type="Boolean" Nullable="false" DefaultValue="False" />
+    <Property Name="Is_Trabajo_Terminado" Type="Boolean" Nullable="false" DefaultValue="False" />
+    <NavigationProperty Name="Cliente" Relationship="RugDataBase_ADO_NET_Entity_Data_Model.ClienteAlbaran" FromRole="Albaran" ToRole="Cliente" />
+    <Property Name="ClienteCliente_Id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Factura" Relationship="RugDataBase_ADO_NET_Entity_Data_Model.AlbaranFactura" FromRole="Albaran" ToRole="Factura" />
+    <Property Name="Parte_Confirmado" Type="String" Nullable="true" />
+    <NavigationProperty Name="Alfombras" Relationship="RugDataBase_ADO_NET_Entity_Data_Model.AlbaranAlfombra" FromRole="Albaran" ToRole="Alfombra" />
+    <Property Name="Total_Items_Quantity" Type="Int16" Nullable="true" />
+    <NavigationProperty Name="Lavados" Relationship="RugDataBase_ADO_NET_Entity_Data_Model.LavadoAlbaran" FromRole="Albaran" ToRole="Lavado" />
+    <Property Name="Numero_Albaran" Type="String" Nullable="false" />
+    <Property Name="Is_Active" Type="Boolean" Nullable="false" />
+    <Property Name="NumeroDeAviso" Type="String" Nullable="false" MaxLength="20" />
+    <Property Name="fecha_Estimada" Type="DateTime" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Factura">
+    <Key>
+      <PropertyRef Name="Fatura_Id" />
+    </Key>
+    <Property Name="Fatura_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Total" Type="Int16" Nullable="false" />
+    <Property Name="Is_Cobrado" Type="Boolean" Nullable="false" DefaultValue="False" />
+    <Property Name="Metodo_Pago" Type="String" Nullable="true" MaxLength="20" />
+    <Property Name="Fecha_Emicion" Type="DateTime" Nullable="false" />
+    <Property Name="Fecha_Entrega" Type="DateTime" Nullable="false" />
+    <NavigationProperty Name="Cliente" Relationship="RugDataBase_ADO_NET_Entity_Data_Model.ClienteFactura" FromRole="Factura" ToRole="Cliente" />
+    <Property Name="ClienteCliente_Id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Albaran" Relationship="RugDataBase_ADO_NET_Entity_Data_Model.AlbaranFactura" FromRole="Factura" ToRole="Albaran" />
+    <Property Name="Entregado_Por" Type="String" Nullable="true" MaxLength="50" />
+    <NavigationProperty Name="Alfombras" Relationship="RugDataBase_ADO_NET_Entity_Data_Model.FacturaAlfombra" FromRole="Factura" ToRole="Alfombra" />
+    <Property Name="ContactContact_Id" Type="Int32" Nullable="false" />
+    <Property Name="Is_Entregado" Type="String" Nullable="false" DefaultValue="False" />
+    <Property Name="Descuento" Type="Int16" Nullable="false" DefaultValue="0" />
+  </EntityType>
+  <Association Name="ClienteAlbaran">
+    <End Type="RugDataBase_ADO_NET_Entity_Data_Model.Cliente" Role="Cliente" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="RugDataBase_ADO_NET_Entity_Data_Model.Albaran" Role="Albaran" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cliente">
+        <PropertyRef Name="Cliente_Id" />
+      </Principal>
+      <Dependent Role="Albaran">
+        <PropertyRef Name="ClienteCliente_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ClienteFactura">
+    <End Type="RugDataBase_ADO_NET_Entity_Data_Model.Cliente" Role="Cliente" Multiplicity="1" />
+    <End Type="RugDataBase_ADO_NET_Entity_Data_Model.Factura" Role="Factura" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cliente">
+        <PropertyRef Name="Cliente_Id" />
+      </Principal>
+      <Dependent Role="Factura">
+        <PropertyRef Name="ClienteCliente_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="AlbaranFactura">
+    <End Type="RugDataBase_ADO_NET_Entity_Data_Model.Albaran" Role="Albaran" Multiplicity="0..1" />
+    <End Type="RugDataBase_ADO_NET_Entity_Data_Model.Factura" Role="Factura" Multiplicity="0..1" />
+  </Association>
+  <Association Name="AlbaranAlfombra">
+    <End Type="RugDataBase_ADO_NET_Entity_Data_Model.Albaran" Role="Albaran" Multiplicity="*" />
+    <End Type="RugDataBase_ADO_NET_Entity_Data_Model.Alfombra" Role="Alfombra" Multiplicity="*" />
+  </Association>
+  <Association Name="FacturaAlfombra">
+    <End Type="RugDataBase_ADO_NET_Entity_Data_Model.Factura" Role="Factura" Multiplicity="*" />
+    <End Type="RugDataBase_ADO_NET_Entity_Data_Model.Alfombra" Role="Alfombra" Multiplicity="*" />
+  </Association>
+  <EntityType Name="Lavado">
+    <Key>
+      <PropertyRef Name="Lavado_Id" />
+    </Key>
+    <Property Name="Lavado_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Personal" Type="String" Nullable="false" MaxLength="100" />
+    <Property Name="Fecha" Type="DateTime" Nullable="false" />
+    <NavigationProperty Name="Alfombras" Relationship="RugDataBase_ADO_NET_Entity_Data_Model.LavadoAlfombra" FromRole="Lavado" ToRole="Alfombra" />
+    <NavigationProperty Name="Albarans" Relationship="RugDataBase_ADO_NET_Entity_Data_Model.LavadoAlbaran" FromRole="Lavado" ToRole="Albaran" />
+  </EntityType>
+  <Association Name="LavadoAlfombra">
+    <End Type="RugDataBase_ADO_NET_Entity_Data_Model.Lavado" Role="Lavado" Multiplicity="*" />
+    <End Type="RugDataBase_ADO_NET_Entity_Data_Model.Alfombra" Role="Alfombra" Multiplicity="*" />
+  </Association>
+  <Association Name="LavadoAlbaran">
+    <End Type="RugDataBase_ADO_NET_Entity_Data_Model.Lavado" Role="Lavado" Multiplicity="*" />
+    <End Type="RugDataBase_ADO_NET_Entity_Data_Model.Albaran" Role="Albaran" Multiplicity="*" />
+  </Association>
+</Schema>
